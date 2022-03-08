@@ -1,6 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
+# *.py[cod]
 *$py.class
 
 # C extensions
@@ -47,7 +47,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
-*.py,cover
+# *.py,cover
 .hypothesis/
 .pytest_cache/
 
@@ -57,8 +57,8 @@ coverage.xml
 
 # Django stuff:
 *.log
-local_settings.py
-db.sqlite3
+# local_settings.py
+# db.sqlite3
 db.sqlite3-journal
 
 # Flask stuff:

@@ -18,6 +18,6 @@ class Product(models.Model):
     def __str__(self): # test for checking product model
         return self.name
 
-class SubCategory(models.Model):
-    sub_category = models.CharField(max_length=32, blank=True, null=True)
-    category_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='sub_category')
+# class SubCategory(models.Model):
+#     sub_category = models.CharField(max_length=32, blank=True, null=True)
+#     category_id = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='sub_category')
