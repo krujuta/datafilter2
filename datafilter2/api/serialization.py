@@ -7,9 +7,6 @@ from .models import Product
 #         fields = ['sub_category']
 
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
-    # sub_category = SubCategorySerializer(many = True)
     class Meta:
         model = Product
-        fields = ['name', 'price', 'vendor', 'category', 
-        'product_description', 'image', 'admissible_group'
-        ]
+        fields = ['url','name', 'price', 'vendor', 'category', 'product_description', 'image']
