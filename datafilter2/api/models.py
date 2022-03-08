@@ -8,15 +8,15 @@ class Product(models.Model):
     category = models.CharField(max_length=32, blank=True, null=True)
     product_description = models.CharField(max_length=255,blank=False)
     image = models.TextField(blank=False) #placeholder for images
-    admissible_region = (
-        ('EU', 'EU'),
-        ('US', 'US'),
-        ('CHINA', 'CHINA'),
-        ('ROW', 'ROW'),
-    )
+    # admissible_region = (
+    #     ('EU', 'EU'),
+    #     ('US', 'US'),
+    #     ('CHINA', 'CHINA'),
+    #     ('ROW', 'ROW'),
+    # )
 
-    def __str__(self): # test for checking product model
-        return self.name
+    # def __str__(self): # test for checking product model
+    #     return self.name
 
 # class SubCategory(models.Model):
 #     sub_category = models.CharField(max_length=32, blank=True, null=True)

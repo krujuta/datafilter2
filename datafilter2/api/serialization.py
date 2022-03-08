@@ -6,7 +6,7 @@ from .models import Product
 #         model = SubCategory
 #         fields = ['sub_category']
 
-class ProductSerializer(serializers.ModelSerializer):
+class ProductSerializer(serializers.HyperlinkedModelSerializer):
     # sub_category = SubCategorySerializer(many = True)
     class Meta:
         model = Product
