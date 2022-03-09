@@ -27,5 +27,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('get_product_by_id/<pk>', views.get_product_by_id),
-    path('get_products_sorted/<sort_by>', views.get_products_sorted),
+    path('get_products_sorted', views.get_products_sorted),
 ]

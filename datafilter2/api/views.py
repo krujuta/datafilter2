@@ -36,7 +36,12 @@ def get_product_by_id(request,pk):
 
 #get product by order
 @api_view(['GET'])
-def get_products_sorted(request,sort_by):
+def get_products_sorted(request):
+    order_by = request.GET.get('order_by')
+    sort_by = request.GET.get('sort_by')
+
+    if((order_by != "") & (order_by == 'DESC')):
+        sort_by = '-'+sort_by
     try:
         products = Product.objects.all().order_by(sort_by)
     except Product.DoesNotExist:
