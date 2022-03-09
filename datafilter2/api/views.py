@@ -9,7 +9,7 @@ class ProductsViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = Product.objects.all().order_by('-date_joined')
+    queryset = Product.objects.all().order_by('name')
     serializer_class = ProductSerializer
 
 # class GroupViewSet(viewsets.ModelViewSet):

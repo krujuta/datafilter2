@@ -18,7 +18,8 @@ import psycopg2
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = 'postgres://cmrcgksirqviua:62384f5dd5c661acaab4985d794a9b75b97a870e64262bde5ae2a3154ac8de35@ec2-34-195-233-155.compute-1.amazonaws.com:5432/d1t6scqaskjp1m'
+#os.environ['DATABASE_URL']
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Quick-start development settings - unsuitable for production
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'datafilter2.api',
+    'datafilter2',
     'rest_framework',
 ]
 
@@ -83,8 +84,12 @@ WSGI_APPLICATION = 'datafilter2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ddqs0kqnlero8o',
+        'USER': 'znxwfrpryxxjdx',
+        'PASSWORD': '729fc929dc2b78e7e06438b1b4fbce815a611abc6322955b1bac994958f9f69a',
+        'HOST': 'ec2-35-153-4-187.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -138,4 +143,12 @@ REST_FRAMEWORK = {
 
 #Database
 import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+ON_HEROKU = True
+if ON_HEROKU:
+    DATABASE_URL = 'postgresql://znxwfrpryxxjdx:729fc929dc2b78e7e06438b1b4fbce815a611abc6322955b1bac994958f9f69a@ec2-35-153-4-187.compute-1.amazonaws.com:5432/ddqs0kqnlero8o'
+else:
+    DATABASE_URL = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+
+DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
+
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
