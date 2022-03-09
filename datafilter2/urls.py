@@ -19,11 +19,13 @@ from rest_framework import routers
 from datafilter2.api import views
 
 router = routers.DefaultRouter()
-router.register(r'products', views.ProductsViewSet, 'products')
+router.register(r'datafilter2/products', views.ProductsViewSet, 'products')
 
 # Setup automatic URL routing
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('get_product_by_id/<pk>', views.get_product_by_id),
+    path('get_products_sorted/<sort_by>', views.get_products_sorted),
 ]

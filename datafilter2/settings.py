@@ -26,7 +26,8 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET']
+SECRET_KEY = 'django-insecure-s1^m-6m$194q1ka#v_2rpgk$3df_la&@0fzb_n*xrb4u@!#(v6'
+#os.environ['DJANGO_SECRET']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -45,8 +46,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'datafilter2',
+    'corsheaders', # CORS to accept requests from localhost:8081
+    'corsheaders.middleware',
+    'django.middleware.common',
     'rest_framework',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8081',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
