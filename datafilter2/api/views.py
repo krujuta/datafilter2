@@ -2,13 +2,11 @@ from datafilter2.api.serialization import ProductSerializer
 from rest_framework import viewsets
 from datafilter2.api.models import Product
 from rest_framework.decorators import api_view
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from .models import Product
 from rest_framework.response import Response
 from rest_framework import status
-import logging
 from django.http.response import JsonResponse
-from rest_framework.parsers import JSONParser 
 
 # Create your views here.
 
@@ -50,27 +48,3 @@ def get_products_sorted(request):
     if request.method == 'GET': 
         product_serializer = ProductSerializer(products, many=True) 
         return JsonResponse(product_serializer.data, safe=False) 
-
-# class product_list(viewsets.ModelViewSet):
-#     category_slug = None
-#     subcategory_slug = None
-#     category = None
-#     categories = Category.objects.all()
-#     subcategory = None
-#     # subcategories = Subcategory.objects.all()
-#     products = Product.objects.all().order_by('name') #Product.objects.filter(available=True)
-
-#     if category_slug:
-#         category = get_object_or_404(Category, slug=category_slug)
-#         # subcategory = get_object_or_404(Subcategory, slug=subcategory_slug)
-#         products = products.filter(category=category)
-
-#     serializer_class = ProductSerializer
-
-#     # return render(request,
-#     #               'selcorshop/product/list.html',
-#     #               {'category': category,
-#     #                'categories': categories,
-#     #                'subcategory': subcategory,
-#     #                'subcategories': subcategories,
-#     #                'products': products})
