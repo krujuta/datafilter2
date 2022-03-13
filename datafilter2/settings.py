@@ -94,10 +94,10 @@ WSGI_APPLICATION = 'datafilter2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ddqs0kqnlero8o',
-        'USER': 'znxwfrpryxxjdx',
-        'PASSWORD': '729fc929dc2b78e7e06438b1b4fbce815a611abc6322955b1bac994958f9f69a',
-        'HOST': 'ec2-35-153-4-187.compute-1.amazonaws.com',
+        'NAME': 'd7gese2vpu9upc',
+        'USER': 'xxlsbbnhnfzbfb',
+        'PASSWORD': 'bcb93bc0ee378e55ac859f2a61063f0ff7f856a25c388ba8e5050a026d6c9b75',
+        'HOST': 'ec2-52-44-209-165.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -154,7 +154,7 @@ REST_FRAMEWORK = {
 import dj_database_url
 ON_HEROKU = True
 if ON_HEROKU:
-    DATABASE_URL = 'postgresql://znxwfrpryxxjdx:729fc929dc2b78e7e06438b1b4fbce815a611abc6322955b1bac994958f9f69a@ec2-35-153-4-187.compute-1.amazonaws.com:5432/ddqs0kqnlero8o'
+    DATABASE_URL = 'postgres://xxlsbbnhnfzbfb:bcb93bc0ee378e55ac859f2a61063f0ff7f856a25c388ba8e5050a026d6c9b75@ec2-52-44-209-165.compute-1.amazonaws.com:5432/d7gese2vpu9upc'
 else:
     DATABASE_URL = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
