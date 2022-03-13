@@ -2,8 +2,6 @@ from datafilter2.api.serialization import ProductSerializer, CategorySerializer,
 from rest_framework import viewsets
 from datafilter2.api.models import Product
 from rest_framework.decorators import api_view
-from django.shortcuts import get_object_or_404
-from django.core import serializers
 
 from .models import Category, Product, SubCategory
 from rest_framework.response import Response
