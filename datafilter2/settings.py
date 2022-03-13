@@ -94,10 +94,10 @@ WSGI_APPLICATION = 'datafilter2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd7gese2vpu9upc',
-        'USER': 'xxlsbbnhnfzbfb',
-        'PASSWORD': 'bcb93bc0ee378e55ac859f2a61063f0ff7f856a25c388ba8e5050a026d6c9b75',
-        'HOST': 'ec2-52-44-209-165.compute-1.amazonaws.com',
+        'NAME': 'deq7omq33uub88',
+        'USER': 'hdrysnhqcrzfaw',
+        'PASSWORD': '7677007af20c785095a5e3f9eb49f21f238c42b83e167d39ef01324cf81c75f7',
+        'HOST': 'ec2-52-70-186-184.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
