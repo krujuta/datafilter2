@@ -17,17 +17,18 @@ import psycopg2
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-DATABASE_URL = 'postgres://cmrcgksirqviua:62384f5dd5c661acaab4985d794a9b75b97a870e64262bde5ae2a3154ac8de35@ec2-34-195-233-155.compute-1.amazonaws.com:5432/d1t6scqaskjp1m'
-#os.environ['DATABASE_URL']
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+DB_URL = os.environ['DATABASE_URL']
+DB_NAME = os.environ['DATABASE_NAME']
+DB_USER = os.environ['DB_USER_NAME']
+DB_PASS =os.environ['DB_PASSWORD']
+DB_HOST = os.environ['DB_HOST']
+conn = psycopg2.connect(DB_URL, sslmode='require')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s1^m-6m$194q1ka#v_2rpgk$3df_la&@0fzb_n*xrb4u@!#(v6'
-#os.environ['DJANGO_SECRET']
+SECRET_KEY = os.environ['DJANGO_SECRET']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -94,10 +95,10 @@ WSGI_APPLICATION = 'datafilter2.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'deq7omq33uub88',
-        'USER': 'hdrysnhqcrzfaw',
-        'PASSWORD': '7677007af20c785095a5e3f9eb49f21f238c42b83e167d39ef01324cf81c75f7',
-        'HOST': 'ec2-52-70-186-184.compute-1.amazonaws.com',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASS,
+        'HOST': DB_HOST,
         'PORT': '5432',
     }
 }
