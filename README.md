@@ -3,12 +3,12 @@
 The project that we like you to develop needs to meet the following requirements.
 
 Please check each box as you implement them:  
- Create a back-end structure for a product marketplace. This structure must contain
+[x] Create a back-end structure for a product marketplace. This structure must contain
 at least the price, the vendor, the category, a product description, an image, and the admissible region (EU, US, China, ROW) for a given product.  
- The product category should allow at least for sub-categories (two-level taxonomy).  
- Write an API that allows the marketplace front-end to list the products sorted by price,
+[x] The product category should allow at least for sub-categories (two-level taxonomy).  
+[x] Write an API that allows the marketplace front-end to list the products sorted by price,
 by vendors, and categories. (Sorting = show all products in the given order)  
- Extend the API by filters for a given category & sub-category, by vendors, and by price. (Filtering = filter products according to given criteria. I.e., show only the matches)
+[x] Extend the API by filters for a given category & sub-category, by vendors, and by price. (Filtering = filter products according to given criteria. I.e., show only the matches)
 
 
 # App specifications
