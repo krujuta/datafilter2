@@ -17,18 +17,19 @@ import psycopg2
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DB_URL = os.environ['DATABASE_URL']
-DB_NAME = os.environ['DATABASE_NAME']
-DB_USER = os.environ['DB_USER_NAME']
-DB_PASS =os.environ['DB_PASSWORD']
-DB_HOST = os.environ['DB_HOST']
+DB_URL = os.environ.get('DATABASE_URL')
+DB_NAME = os.environ.get('DATABASE_NAME')
+DB_USER = os.environ.get('DB_USER_NAME')
+DB_PASS =os.environ.get('DB_PASSWORD')
+DB_HOST = os.environ.get('DB_HOST')
+
 conn = psycopg2.connect(DB_URL, sslmode='require')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET']
+SECRET_KEY = os.environ.get('DJANGO_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -155,7 +156,7 @@ REST_FRAMEWORK = {
 import dj_database_url
 ON_HEROKU = True
 if ON_HEROKU:
-    DATABASE_URL = 'postgres://xxlsbbnhnfzbfb:bcb93bc0ee378e55ac859f2a61063f0ff7f856a25c388ba8e5050a026d6c9b75@ec2-52-44-209-165.compute-1.amazonaws.com:5432/d7gese2vpu9upc'
+    DATABASE_URL = DB_URL
 else:
     DATABASE_URL = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 

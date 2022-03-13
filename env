@@ -1,0 +1,6 @@
+DATABASE_URL=postgres://xxlsbbnhnfzbfb:bcb93bc0ee378e55ac859f2a61063f0ff7f856a25c388ba8e5050a026d6c9b75@ec2-52-44-209-165.compute-1.amazonaws.com:5432/d7gese2vpu9upc
+DATABASE_NAME=d7gese2vpu9upc
+DB_USER_NAME=xxlsbbnhnfzbfb
+DB_PASSWORD=bcb93bc0ee378e55ac859f2a61063f0ff7f856a25c388ba8e5050a026d6c9b75
+DB_HOST=ec2-52-44-209-165.compute-1.amazonaws.com
+DJANGO_SECRET=django-insecure-s1^m-6m$194q1ka#v_2rpgk$3df_la&@0fzb_n*xrb4u@!#(v6
