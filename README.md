@@ -64,4 +64,6 @@ docker run -d --name datafilter2 -e "PORT=8765" -e "DEBUG=1" --env-file ./env -p
          
 
 
+# Architecture and WorkFlow Diagram :
+![diagram](https://github.com/krujuta/datafilter2/blob/main/datafilterapp.jpeg?raw=true)
 
