@@ -1,20 +1,24 @@
 from rest_framework import serializers
 from .models import Product, Category, SubCategory
 
+#for serializing sub-category data
 class SubCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = SubCategory
-        fields = ('name')
+        fields = ['name']
 
+#for serializing category data
 class CategorySerializer(serializers.ModelSerializer):
-    subcategories = SubCategorySerializer(many=True)
     class Meta:
         model = Category
-        fields = ('name','subcategories')
+        fields = ['name']
 
+#for serializing product data
 class ProductSerializer(serializers.HyperlinkedModelSerializer):
-    categories = CategorySerializer(many=True) 
+    #for serializing nested data
+    subcategory = SubCategorySerializer() 
+    category = CategorySerializer()
     class Meta:
         model = Product
-        fields = ('name', 'price', 'vendor', 
-        'product_description', 'image','admissibleregion','categories')
+        fields = ['name', 'price', 'vendor', 'product_description',
+         'image','admissibleregion','category','subcategory']
