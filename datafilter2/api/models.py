@@ -14,7 +14,7 @@ class SubCategory(models.Model):
     name = models.CharField(max_length=200)
     # foreign key /  one-to-one mapping 
     # with assumption that, every sub-category will be a part of single category
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.OneToOneField(Category, blank=False, primary_key=True, on_delete=models.CASCADE)
     def __str__(self):
         return self.name
 
