@@ -1,1 +1,1 @@
-web: gunicorn --chdir datafilter-3 datafilter2.wsgi
+web: gunicorn --chdir datafilter2 datafilter2.wsgi
