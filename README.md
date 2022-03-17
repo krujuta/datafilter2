@@ -27,7 +27,9 @@ python3 manage.py runserver 8080 - to run app locally
 
 - To run the app using docker  : 
 
-docker run -d --name datafilter2 -e "PORT=8765" -e "DEBUG=1" --env-file ./env -p 8007:8765 web:latest  
+1. docker build -t web:latest .
+
+2. docker run -d --name datafilter2 -e "PORT=8765" -e "DEBUG=1" --env-file ./env -p 8007:8765 web:latest  
 - env file is shared via email.
 
 # API reference :
